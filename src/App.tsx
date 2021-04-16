@@ -1,24 +1,16 @@
 import React from 'react';
 import './App.css';
-import FormField, { FormFieldProps,  } from './data/GoblinBureaucracy/FormField';
+import Form from './data/GoblinBureaucracy/Form';
+import generateForm, { generateRandomString } from './data/GoblinBureaucracy/Utils';
+import languages from './data/Language';
 
 function App() {
-//  let form = generateForm(1, '247B', languages[1]); // goblinese
-
-  const props:FormFieldProps = {
-    label: 'Name',
-    value: ''
-  };
-
-  const props2:FormFieldProps = {
-    label: 'Ancestor',
-    value: ''
-  };
+  const goblinese = languages[1];
+  const props = generateForm(1, generateRandomString(16, goblinese), goblinese);
 
   return (
     <div className="App">
-      <FormField {...props} />
-      <FormField {...props2} />
+      <Form {...props} />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField'
+import { observer } from 'mobx-react-lite';
 
 interface FormFieldProps {
     label: string;
@@ -22,5 +23,5 @@ const FormField = ((props: FormFieldProps):JSX.Element => {
     />;
 });
 
-export default FormField;
+export default observer(FormField);
 export type { FormFieldProps };

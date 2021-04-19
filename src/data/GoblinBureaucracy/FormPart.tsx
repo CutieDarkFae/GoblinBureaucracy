@@ -2,11 +2,12 @@ import React from 'react';
 import FormField, { FormFieldProps } from './FormField';
 import Grid from '@material-ui/core/Grid';
 import makeStyles from '@material-ui/core/styles/makeStyles';
+import { observer } from 'mobx-react-lite';
 
 
 interface FormPartProps {
     id: string;
-    partNumberOnForm: Number;
+    partNumberOnForm: number;
     fields: FormFieldProps[];
     stamped: boolean;
 }
@@ -43,5 +44,5 @@ const FormPart = ((props: FormPartProps): JSX.Element => {
     </div >;
 });
 
-export default FormPart;
+export default observer(FormPart);
 export type { FormPartProps };
